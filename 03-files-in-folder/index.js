@@ -15,10 +15,7 @@ async function readFile(folderSrc) {
         const sizeInKb = (fileSize / 1024).toFixed(3);
         const extension = path.extname(elem.name).slice(1);
         console.log(`${elem.name} - ${extension} - ${sizeInKb} kb`);
-      } else if (elem.isDirectory()) {
-        console.log(`Подпапка: ${elem.name}`);
-        await readFile(itemPath);
-      }
+      } 
     }
   } catch (err) {
     console.error('Ошибка чтения папки:', err);
